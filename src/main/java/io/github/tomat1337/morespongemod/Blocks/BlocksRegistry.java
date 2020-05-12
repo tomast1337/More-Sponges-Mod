@@ -17,159 +17,169 @@ import net.minecraftforge.registries.ObjectHolder;
 @Mod.EventBusSubscriber(modid = ModInfo.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class BlocksRegistry {
     //Sponge Blocks
-        private static Block large_sponge =
-                new SpongeBlock(Block.Properties
-                        .create(Material.SPONGE)
-                        .harvestTool(ToolType.get("sword"))
-                        .sound(SoundType.CLOTH)
-                        .hardnessAndResistance(0.5f, 0.5f)
-                        ,false
-                        ,7);
-        private static Block extra_large_sponge =
-                new SpongeBlock(Block.Properties
-                        .create(Material.SPONGE)
-                        .harvestTool(ToolType.get("sword"))
-                        .sound(SoundType.CLOTH)
-                        .hardnessAndResistance(0.5f, 0.5f)
-                        ,false
-                        ,14);
-        private static Block lava_sponge =
-                new SpongeBlock(Block.Properties
-                        .create(Material.SPONGE)
-                        .harvestTool(ToolType.get("sword"))
-                        .sound(SoundType.CLOTH)
-                        .hardnessAndResistance(0.5f, 0.5f)
-                        ,true
-                        ,1);
-        private static Block lava_large_sponge =
-                new SpongeBlock(Block.Properties
-                        .create(Material.SPONGE)
-                        .harvestTool(ToolType.get("sword"))
-                        .sound(SoundType.CLOTH)
-                        .hardnessAndResistance(0.5f, 0.5f)
-                        ,true
-                        ,7);
-        private static Block lava_extra_large_sponge =
-                new SpongeBlock(Block.Properties
-                        .create(Material.SPONGE)
-                        .harvestTool(ToolType.get("sword"))
-                        .sound(SoundType.CLOTH)
-                        .hardnessAndResistance(0.5f, 0.5f)
-                        ,true
-                        ,14);
+    public static Block large_sponge =
+            new SpongeBlock(Block.Properties
+                    .create(Material.SPONGE)
+                    .harvestTool(ToolType.get("sword"))
+                    .sound(SoundType.CLOTH)
+                    .hardnessAndResistance(0.5f, 0.5f)
+                    , false
+                    , 7
+                    ,'L');
+    public static Block extra_large_sponge =
+            new SpongeBlock(Block.Properties
+                    .create(Material.SPONGE)
+                    .harvestTool(ToolType.get("sword"))
+                    .sound(SoundType.CLOTH)
+                    .hardnessAndResistance(0.5f, 0.5f)
+                    , false
+                    , 14
+                    ,'E');
+    public static Block lava_sponge =
+            new SpongeBlock(Block.Properties
+                    .create(Material.SPONGE)
+                    .harvestTool(ToolType.get("sword"))
+                    .sound(SoundType.CLOTH)
+                    .hardnessAndResistance(0.5f, 0.5f)
+                    , true
+                    , 1
+                    ,'N');
+    public static Block lava_large_sponge =
+            new SpongeBlock(Block.Properties
+                    .create(Material.SPONGE)
+                    .harvestTool(ToolType.get("sword"))
+                    .sound(SoundType.CLOTH)
+                    .hardnessAndResistance(0.5f, 0.5f)
+                    , true
+                    , 7
+                    ,'L');
+    public static Block lava_extra_large_sponge =
+            new SpongeBlock(Block.Properties
+                    .create(Material.SPONGE)
+                    .harvestTool(ToolType.get("sword"))
+                    .sound(SoundType.CLOTH)
+                    .hardnessAndResistance(0.5f, 0.5f)
+                    , true
+                    , 14
+                    ,'E');
     //Sponge Blocks Items
-        private static BlockItem large_spongeItem =
-                new BlockItem(large_sponge,
-                        new Item
-                        .Properties()
-                        .maxStackSize(64)
-                        .group(ItemGroup.BUILDING_BLOCKS)
-                );
-        private static BlockItem extra_large_spongeItem =
-                new BlockItem(extra_large_sponge,
-                        new Item
-                        .Properties()
-                        .maxStackSize(64)
-                        .group(ItemGroup.BUILDING_BLOCKS)
-                );
-        private static BlockItem lava_spongeItem =
-                new BlockItem(lava_sponge,
-                        new Item
-                        .Properties()
-                        .maxStackSize(64)
-                        .group(ItemGroup.BUILDING_BLOCKS)
-                );
-        private static BlockItem lava_large_spongeItem =
-                new BlockItem(lava_large_sponge,
-                        new Item
-                        .Properties()
-                        .maxStackSize(64)
-                        .group(ItemGroup.BUILDING_BLOCKS)
-                );
-        private static BlockItem lava_extra_large_spongeItem =
-                new BlockItem(lava_extra_large_sponge,
-                        new Item
-                        .Properties()
-                        .maxStackSize(64)
-                        .group(ItemGroup.BUILDING_BLOCKS)
-                );
+    public static BlockItem large_spongeItem =
+            new BlockItem(large_sponge,
+                    new Item
+                            .Properties()
+                            .maxStackSize(64)
+                            .group(ItemGroup.BUILDING_BLOCKS)
+            );
+    public static BlockItem extra_large_spongeItem =
+            new BlockItem(extra_large_sponge,
+                    new Item
+                            .Properties()
+                            .maxStackSize(64)
+                            .group(ItemGroup.BUILDING_BLOCKS)
+            );
+    public static BlockItem lava_spongeItem =
+            new BlockItem(lava_sponge,
+                    new Item
+                            .Properties()
+                            .maxStackSize(64)
+                            .group(ItemGroup.BUILDING_BLOCKS)
+            );
+    public static BlockItem lava_large_spongeItem =
+            new BlockItem(lava_large_sponge,
+                    new Item
+                            .Properties()
+                            .maxStackSize(64)
+                            .group(ItemGroup.BUILDING_BLOCKS)
+            );
+    public static BlockItem lava_extra_large_spongeItem =
+            new BlockItem(lava_extra_large_sponge,
+                    new Item
+                            .Properties()
+                            .maxStackSize(64)
+                            .group(ItemGroup.BUILDING_BLOCKS)
+            );
     //Wet Sponge Blocks
-        private static Block wet_large_sponge =
-                new WetSpongeBlock(
-                        Block.Properties
-                                .create(Material.SPONGE)
-                                .harvestTool(ToolType.get("sword"))
-                                .sound(SoundType.CLOTH)
-                                .hardnessAndResistance(0.5f, 0.5f),
-                        false);
-        private static Block wet_extra_large_sponge =
-                new WetSpongeBlock(
-                        Block.Properties
-                                .create(Material.SPONGE)
-                                .harvestTool(ToolType.get("sword"))
-                                .sound(SoundType.CLOTH)
-                                .hardnessAndResistance(0.5f, 0.5f)
-                        ,false);
-        private static Block wet_lava_sponge =
-                new WetSpongeBlock(
-                        Block.Properties
-                                .create(Material.SPONGE)
-                                .harvestTool(ToolType.get("sword"))
-                                .sound(SoundType.CLOTH)
-                                .hardnessAndResistance(0.5f, 0.5f)
-                        ,true);
-        private static Block wet_lava_large_sponge =
-                new WetSpongeBlock(
-                        Block.Properties
-                                .create(Material.SPONGE)
-                                .harvestTool(ToolType.get("sword"))
-                                .sound(SoundType.CLOTH)
-                                .hardnessAndResistance(0.5f, 0.5f)
-                        ,true);
-        private static Block wet_lava_extra_large_sponge =
-                new WetSpongeBlock(
-                        Block.Properties
-                                .create(Material.SPONGE)
-                                .harvestTool(ToolType.get("sword"))
-                                .sound(SoundType.CLOTH)
-                                .hardnessAndResistance(0.5f, 0.5f)
-                        ,true);
+    public static Block wet_large_sponge =
+            new WetSpongeBlock(
+                    Block.Properties
+                            .create(Material.SPONGE)
+                            .harvestTool(ToolType.get("sword"))
+                            .sound(SoundType.CLOTH)
+                            .hardnessAndResistance(0.5f, 0.5f)
+                    ,false
+                    ,'L');
+    public static Block wet_extra_large_sponge =
+            new WetSpongeBlock(
+                    Block.Properties
+                            .create(Material.SPONGE)
+                            .harvestTool(ToolType.get("sword"))
+                            .sound(SoundType.CLOTH)
+                            .hardnessAndResistance(0.5f, 0.5f)
+                    , false
+                    ,'E');
+    public static Block wet_lava_sponge =
+            new WetSpongeBlock(
+                    Block.Properties
+                            .create(Material.SPONGE)
+                            .harvestTool(ToolType.get("sword"))
+                            .sound(SoundType.CLOTH)
+                            .hardnessAndResistance(0.5f, 0.5f)
+                    , true
+                    ,'N');
+    public static Block wet_lava_large_sponge =
+            new WetSpongeBlock(
+                    Block.Properties
+                            .create(Material.SPONGE)
+                            .harvestTool(ToolType.get("sword"))
+                            .sound(SoundType.CLOTH)
+                            .hardnessAndResistance(0.5f, 0.5f)
+                    , true
+                    ,'L');
+    public static Block wet_lava_extra_large_sponge =
+            new WetSpongeBlock(
+                    Block.Properties
+                            .create(Material.SPONGE)
+                            .harvestTool(ToolType.get("sword"))
+                            .sound(SoundType.CLOTH)
+                            .hardnessAndResistance(0.5f, 0.5f)
+                    , true
+                    ,'E');
     //Wet Sponge Blocks Items
-        private static BlockItem wet_large_spongeItem =
-                new BlockItem(wet_large_sponge,new
-                        Item
+    public static BlockItem wet_large_spongeItem =
+            new BlockItem(wet_large_sponge, new
+                    Item
                             .Properties()
-                            .maxStackSize(64)
-                            .group(ItemGroup.BUILDING_BLOCKS)
-                );
-        private static BlockItem wet_extra_large_spongeItem =
-                new BlockItem(wet_extra_large_sponge,new
-                        Item
+                    .maxStackSize(64)
+                    .group(ItemGroup.BUILDING_BLOCKS)
+            );
+    public static BlockItem wet_extra_large_spongeItem =
+            new BlockItem(wet_extra_large_sponge, new
+                    Item
                             .Properties()
-                            .maxStackSize(64)
-                            .group(ItemGroup.BUILDING_BLOCKS)
-                );
-        private static BlockItem wet_lava_spongeItem =
-                new BlockItem(wet_lava_sponge,new
-                        Item
+                    .maxStackSize(64)
+                    .group(ItemGroup.BUILDING_BLOCKS)
+            );
+    public static BlockItem wet_lava_spongeItem =
+            new BlockItem(wet_lava_sponge, new
+                    Item
                             .Properties()
-                            .maxStackSize(64)
-                            .group(ItemGroup.BUILDING_BLOCKS)
-                );
-        private static BlockItem wet_lava_large_spongeItem =
-                new BlockItem(wet_lava_large_sponge,new
-                        Item
+                    .maxStackSize(64)
+                    .group(ItemGroup.BUILDING_BLOCKS)
+            );
+    public static BlockItem wet_lava_large_spongeItem =
+            new BlockItem(wet_lava_large_sponge, new
+                    Item
                             .Properties()
-                            .maxStackSize(64)
-                            .group(ItemGroup.BUILDING_BLOCKS)
-                );
-        private static BlockItem wet_lava_extra_large_spongeItem =
-                new BlockItem(wet_lava_extra_large_sponge,new
-                        Item
+                    .maxStackSize(64)
+                    .group(ItemGroup.BUILDING_BLOCKS)
+            );
+    public static BlockItem wet_lava_extra_large_spongeItem =
+            new BlockItem(wet_lava_extra_large_sponge, new
+                    Item
                             .Properties()
-                            .maxStackSize(64)
-                            .group(ItemGroup.BUILDING_BLOCKS)
-                );
+                    .maxStackSize(64)
+                    .group(ItemGroup.BUILDING_BLOCKS)
+            );
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {

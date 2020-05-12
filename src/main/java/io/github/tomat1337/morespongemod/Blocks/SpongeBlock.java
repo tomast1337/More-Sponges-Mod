@@ -17,10 +17,12 @@ import java.util.Queue;
 public class SpongeBlock extends Block {
     private boolean lava;
     private int range;
+    private char type;
 
-    public SpongeBlock(Properties properties, boolean islava, int range) {
+    public SpongeBlock(Properties properties, boolean islava, int range,char type) {
         super(properties);
         this.lava = islava;
+        this.type = type;
         this.range = range;
     }
     public void onBlockAdded(BlockState state, World worldIn, BlockPos pos, BlockState oldState, boolean isMoving) {
@@ -36,7 +38,21 @@ public class SpongeBlock extends Block {
 
     protected void tryAbsorb(World worldIn, BlockPos pos) {
         if (this.absorb(worldIn, pos)) {
-            worldIn.setBlockState(pos, Blocks.WET_SPONGE.getDefaultState(), 2);
+            //Replace Sponge to Wet Sponge
+            if (lava) {
+                if (type == 'E')//extra large
+                    worldIn.setBlockState(pos, BlocksRegistry.wet_lava_extra_large_sponge.getDefaultState(), 2);
+                else if (type == 'L')//large
+                    worldIn.setBlockState(pos, BlocksRegistry.wet_lava_large_sponge.getDefaultState(), 2);
+                else// normal
+                    worldIn.setBlockState(pos, BlocksRegistry.wet_lava_sponge.getDefaultState(), 2);
+
+            } else {
+                if (type == 'E')//extra large
+                    worldIn.setBlockState(pos, BlocksRegistry.wet_extra_large_sponge.getDefaultState(), 2);
+                else if (type == 'L')//large
+                    worldIn.setBlockState(pos, BlocksRegistry.wet_large_sponge.getDefaultState(), 2);
+            }
             worldIn.playEvent(2001, pos, Block.getStateId(Blocks.WATER.getDefaultState()));
         }
 

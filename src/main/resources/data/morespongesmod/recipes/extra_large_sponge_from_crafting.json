@@ -1,23 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "#Y#",
-    "YHY",
-    "#Y#"
+    "#S#",
+    "SSS",
+    "#S#"
   ],
   "key": {
     "#": {
       "item": "minecraft:string"
     },
-    "Y": {
-      "item": "minecraft:yellow_wool"
-    },
-    "H": {
-      "item": "minecraft:horn_coral_block"
+    "S": {
+      "item": "morespongesmod:large_sponge"
     }
   },
   "result": {
-    "item": "minecraft:sponge",
-    "count": 1
+    "item": "morespongesmod:extra_large_sponge",
+    "count": 2
   }
 }

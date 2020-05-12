@@ -10,14 +10,14 @@
       "item": "minecraft:string"
     },
     "Y": {
-      "item": "minecraft:yellow_wool"
+      "tag": "minecraft:wools"
     },
     "H": {
-      "item": "minecraft:horn_coral_block"
+      "tag": "minecraft:coral_block"
     }
   },
   "result": {
     "item": "minecraft:sponge",
-    "count": 1
+    "count": 4
   }
 }

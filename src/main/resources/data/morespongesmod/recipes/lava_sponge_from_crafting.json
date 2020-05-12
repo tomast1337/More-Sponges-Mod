@@ -1,23 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "#Y#",
-    "YHY",
-    "#Y#"
+    "#W#",
+    "WLW",
+    "#W#"
   ],
   "key": {
     "#": {
-      "item": "minecraft:string"
+      "item": "minecraft:magma_cream"
     },
-    "Y": {
-      "item": "minecraft:yellow_wool"
+    "W": {
+      "item": "minecraft:white_wool"
     },
-    "H": {
-      "item": "minecraft:horn_coral_block"
+    "L": {
+      "item": "minecraft:lava_bucket"
     }
   },
   "result": {
-    "item": "minecraft:sponge",
+    "item": "morespongesmod:lava_sponge",
     "count": 1
   }
 }

@@ -59,16 +59,16 @@ public class SpongeBlock extends Block {
                 IFluidState ifluidstate = worldIn.getFluidState(blockpos1);
                 Material material = blockstate.getMaterial();
 
-                if (ifluidstate.isTagged(FluidTags.WATER)) {
+                if (ifluidstate.isTagged(FluidTags.WATER) && lava == false) { // water sponge
                     if (blockstate.getBlock() instanceof IBucketPickupHandler && ((IBucketPickupHandler)blockstate.getBlock()).pickupFluid(worldIn, blockpos1, blockstate) != Fluids.EMPTY) {
                         ++i;
-                        if (j < size) {
+                        if (j < size) { // change 6 for my  custom size value does not change anything
                             queue.add(new Tuple<>(blockpos1, j + 1));
                         }
                     } else if (blockstate.getBlock() instanceof FlowingFluidBlock) {
                         worldIn.setBlockState(blockpos1, Blocks.AIR.getDefaultState(), 3);
                         ++i;
-                        if (j < size) {
+                        if (j < size) { // change 6 for my  custom size value does not change anything
                             queue.add(new Tuple<>(blockpos1, j + 1));
                         }
                     } else if (material == Material.OCEAN_PLANT || material == Material.SEA_GRASS) {
@@ -80,10 +80,23 @@ public class SpongeBlock extends Block {
                             queue.add(new Tuple<>(blockpos1, j + 1));
                         }
                     }
+                }else if (ifluidstate.isTagged(FluidTags.LAVA) && lava) { // Lava sponge
+                    if (blockstate.getBlock() instanceof IBucketPickupHandler && ((IBucketPickupHandler)blockstate.getBlock()).pickupFluid(worldIn, blockpos1, blockstate) != Fluids.EMPTY) {
+                        ++i;
+                        if (j < size) { // change 6 for my  custom size value does not change anything
+                            queue.add(new Tuple<>(blockpos1, j + 1));
+                        }
+                    } else if (blockstate.getBlock() instanceof FlowingFluidBlock) {
+                        worldIn.setBlockState(blockpos1, Blocks.AIR.getDefaultState(), 3);
+                        ++i;
+                        if (j < size) { // change 6 for my  custom size value does not change anything
+                            queue.add(new Tuple<>(blockpos1, j + 1));
+                        }
+                    }
                 }
             }
 
-            if (i > 64 * size) {
+            if (i > 64 * size) { // dont know how tis cod works but changing this value changes de size off the succ
                 break;
             }
         }

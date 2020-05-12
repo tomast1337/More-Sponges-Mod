@@ -2,7 +2,6 @@ package io.github.tomat1337.morespongemod.Blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.Direction;
@@ -17,17 +16,32 @@ import java.util.Random;
 
 public class WetSpongeBlock  extends Block {
     private boolean islava;
+    private char type;
 
-    protected WetSpongeBlock(Properties properties, boolean islava) {
+    protected WetSpongeBlock(Properties properties, boolean islava,char type) {
         super(properties);
         this.islava = islava;
+        this.type = type;
     }
 
     public void onBlockAdded(BlockState state, World worldIn, BlockPos pos, BlockState oldState, boolean isMoving) {
-        if (worldIn.getDimension().doesWaterVaporize()) {
-            worldIn.setBlockState(pos, Blocks.SPONGE.getDefaultState(), 3);
+        if (worldIn.getDimension().doesWaterVaporize() && !islava) {//water sponges
+            if (type == 'E')//extra large
+                worldIn.setBlockState(pos, BlocksRegistry.extra_large_sponge.getDefaultState(), 3);
+            else if (type == 'L')//large
+                worldIn.setBlockState(pos, BlocksRegistry.large_sponge.getDefaultState(), 3);
             worldIn.playEvent(2009, pos, 0);
-            worldIn.playSound((PlayerEntity)null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0F, (1.0F + worldIn.getRandom().nextFloat() * 0.2F) * 0.7F);
+            worldIn.playSound((PlayerEntity) null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0F, (1.0F + worldIn.getRandom().nextFloat() * 0.2F) * 0.7F);
+        }
+        if (!worldIn.getDimension().doesWaterVaporize() && islava) {//lava sponges
+            if (type == 'E')//extra large
+                worldIn.setBlockState(pos, BlocksRegistry.lava_extra_large_sponge.getDefaultState(), 3);
+            else if (type == 'L')//large
+                worldIn.setBlockState(pos, BlocksRegistry.lava_large_sponge.getDefaultState(), 3);
+            else// normal
+                worldIn.setBlockState(pos, BlocksRegistry.lava_sponge.getDefaultState(), 3);
+            worldIn.playEvent(2009, pos, 0);
+            worldIn.playSound((PlayerEntity) null, pos, SoundEvents.AMBIENT_UNDERWATER_ENTER, SoundCategory.BLOCKS, 1.0F, (1.0F + worldIn.getRandom().nextFloat() * 0.2F) * 0.7F);
         }
 
     }

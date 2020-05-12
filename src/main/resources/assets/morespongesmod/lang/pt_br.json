@@ -1,12 +1,12 @@
 {
-  "block.morespongesmod.large_sponge": "Large Sponge Block",
-  "block.morespongesmod.extra_large_sponge": "Extra Large Sponge Block",
-  "block.morespongesmod.lava_sponge": "Lava Sponge Block",
-  "block.morespongesmod.lava_large_sponge": "Large Lava Sponge Block",
-  "block.morespongesmod.lava_extra_large_sponge": "Extra large Lava Sponge Block",
-  "block.morespongesmod.wet_large_sponge": "Wet Large Sponge Block",
-  "block.morespongesmod.wet_extra_large_sponge": "Wet Extra Large Sponge Block",
-  "block.morespongesmod.wet_lava_sponge": "Wet Lava Sponge Block",
-  "block.morespongesmod.wet_lava_large_sponge": "Wet Large Lava Sponge Block",
-  "block.morespongesmod.wet_lava_extra_large_sponge": "Wet Extra large Lava Sponge Block"
+  "block.morespongesmod.large_sponge": "Esponja Grande",
+  "block.morespongesmod.extra_large_sponge": "Esponja Extra Grande",
+  "block.morespongesmod.lava_sponge": "Esponja de Lava",
+  "block.morespongesmod.lava_large_sponge": "Esponja Grande de Lava",
+  "block.morespongesmod.lava_extra_large_sponge": "Esponja Extra Grande de Lava",
+  "block.morespongesmod.wet_large_sponge": "Esponja Grande Molhada",
+  "block.morespongesmod.wet_extra_large_sponge": "Esponja Extra Grande Molhada",
+  "block.morespongesmod.wet_lava_sponge": "Esponja de lava Molhada",
+  "block.morespongesmod.wet_lava_large_sponge": "Esponja Grande de Lava Molhada",
+  "block.morespongesmod.wet_lava_extra_large_sponge": "Esponja Extra Grande de Lava Molhada"
 }

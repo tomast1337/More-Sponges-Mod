@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "morespongesmod:block/wet_lava_sponge"
+        "all": "morespongesmod:blocks/lava_large_sponge"
     }
 }

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "morespongesmod:wet_extra_large_sponge"
+  },
+  "result": "morespongesmod:extra_large_sponge",
+  "experience": 1.2,
+  "cookingtime": 200
+}
